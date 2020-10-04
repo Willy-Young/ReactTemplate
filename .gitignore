@@ -1,6 +1,7 @@
 # intellij
 *.iml
 .idea/
+/bin
 
 # dependencies
 /node_modules
@@ -10,4 +11,4 @@ package-lock.json
 /coverage
 
 # production
-/public/bin
+/assets

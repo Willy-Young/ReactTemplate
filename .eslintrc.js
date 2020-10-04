@@ -1,29 +1,38 @@
 module.exports = {
 	root: true,
-	parser: 'babel-eslint',
+	parser: '@typescript-eslint/parser',
 	parserOptions: {
-		'ecmaVersion': 9,
-		'sourceType': 'module',
-		'ecmaFeatures': {
-			'jsx': true,
-		}
+		ecmaVersion: 2020,
+		sourceType: 'module',
+		ecmaFeatures: {
+			jsx: true,
+		},
 	},
 	env: {
-		'browser': true,
-		'node': true,
-		'es6': true,
-		'jest': true,
+		browser: true,
+		node: true,
+		es6: true,
+		jest: true,
 	},
 	plugins: [
 		'import',
 		'react',
 		'react-hooks',
+		'@typescript-eslint',
+	],
+	extends: [
+		'eslint:recommended',
+		'plugin:import/recommended',
+		'plugin:import/typescript',
+		'plugin:react/recommended',
+		'plugin:@typescript-eslint/eslint-recommended',
+		'plugin:@typescript-eslint/recommended',
 	],
 	settings: {
 		'import/resolver': 'webpack',
-		'react': {
-			'version': '16.8.0',
-		}
+		react: {
+			version: '16.13.1',
+		},
 	},
 	rules: {
 		'array-bracket-spacing': 'error',
@@ -31,10 +40,10 @@ module.exports = {
 		'arrow-body-style': ['error', 'as-needed'],
 		'arrow-parens': ['error', 'as-needed'],
 		'arrow-spacing': 'error',
-		'indent': ['error', 'tab', { SwitchCase: 1 }],
+		indent: ['error', 'tab', { SwitchCase: 1 }],
 		'block-spacing': 'error',
-		'brace-style': ['error', '1tbs', { 'allowSingleLine': true }],
-		'camelcase': 'error',
+		'brace-style': ['error', '1tbs', { allowSingleLine: true }],
+		camelcase: 'error',
 		'callback-return': ['error', ['cb', 'callback', 'next']],
 		'class-methods-use-this': 'error',
 		'comma-dangle': ['error', 'always-multiline'],
@@ -42,12 +51,12 @@ module.exports = {
 		'comma-style': ['error', 'last'],
 		'computed-property-spacing': 'error',
 		'consistent-return': 'error',
-		'curly': ['error', 'multi-line'],
+		curly: ['error', 'multi-line'],
 		'default-case': 'error',
 		'dot-location': ['error', 'property'],
 		'dot-notation': ['error', { allowKeywords: true }],
 		'eol-last': 'error',
-		'eqeqeq': 'error',
+		eqeqeq: 'error',
 		'func-call-spacing': 'error',
 		'func-style': ['error', 'expression'],
 		'function-paren-newline': ['error', 'multiline'],
@@ -57,8 +66,8 @@ module.exports = {
 		'key-spacing': [
 			'error', {
 				beforeColon: false,
-				afterColon: true
-			}
+				afterColon: true,
+			},
 		],
 		'keyword-spacing': 'error',
 		'lines-around-comment': [
@@ -66,17 +75,17 @@ module.exports = {
 				beforeBlockComment: true,
 				afterBlockComment: false,
 				beforeLineComment: true,
-				afterLineComment: false
-			}
+				afterLineComment: false,
+			},
 		],
 		'max-len': [
 			'error', 160, {
-				'ignoreComments': true,
-				'ignoreUrls': true,
-				'ignoreStrings': true,
-				'ignoreTemplateLiterals': true,
-				'ignoreRegExpLiterals': true
-			}
+				ignoreComments: true,
+				ignoreUrls: true,
+				ignoreStrings: true,
+				ignoreTemplateLiterals: true,
+				ignoreRegExpLiterals: true,
+			},
 		],
 		'max-statements-per-line': 'error',
 		'new-cap': 'error',
@@ -113,8 +122,8 @@ module.exports = {
 			'error', {
 				max: 2,
 				maxBOF: 0,
-				maxEOF: 0
-			}
+				maxEOF: 0,
+			},
 		],
 		'no-nested-ternary': 'error',
 		'no-new': 'error',
@@ -132,26 +141,26 @@ module.exports = {
 		'no-restricted-properties': [
 			'error', {
 				property: 'substring',
-				message: 'Use .slice instead of .substring.'
+				message: 'Use .slice instead of .substring.',
 			}, {
 				property: 'substr',
-				message: 'Use .slice instead of .substr.'
+				message: 'Use .slice instead of .substr.',
 			}, {
 				object: 'assert',
 				property: 'equal',
-				message: 'Use assert.strictEqual instead of assert.equal.'
+				message: 'Use assert.strictEqual instead of assert.equal.',
 			}, {
 				object: 'assert',
 				property: 'notEqual',
-				message: 'Use assert.notStrictEqual instead of assert.notEqual.'
+				message: 'Use assert.notStrictEqual instead of assert.notEqual.',
 			}, {
 				object: 'assert',
 				property: 'deepEqual',
-				message: 'Use assert.deepStrictEqual instead of assert.deepStrictEqual.'
+				message: 'Use assert.deepStrictEqual instead of assert.deepStrictEqual.',
 			}, {
 				object: 'assert',
 				property: 'notDeepEqual',
-				message: 'Use assert.notDeepStrictEqual instead of assert.notDeepEqual.'
+				message: 'Use assert.notDeepStrictEqual instead of assert.notDeepEqual.',
 			},
 		],
 		'no-return-assign': 'error',
@@ -162,7 +171,7 @@ module.exports = {
 		'no-shadow': 'error',
 		'no-shadow-restricted-names': 'error',
 		'no-throw-literal': 'error',
-		'no-trailing-spaces': ['error', { 'skipBlankLines': true }],
+		'no-trailing-spaces': ['error', { skipBlankLines: true }],
 		'no-undef': ['error', { typeof: true }],
 		'no-undef-init': 'error',
 		'no-underscore-dangle': ['error', { allowAfterThis: true }],
@@ -172,10 +181,10 @@ module.exports = {
 		'no-unused-vars': [
 			'error', {
 				vars: 'all',
-				args: 'after-used'
-			}
+				args: 'after-used',
+			},
 		],
-		'no-use-before-define': 'error',
+		'no-use-before-define': 'off',
 		'no-useless-call': 'error',
 		'no-useless-computed-key': 'error',
 		'no-useless-concat': 'error',
@@ -188,12 +197,12 @@ module.exports = {
 		'no-var': 'error',
 		'object-curly-newline': [
 			'error', {
-				'consistent': true,
-				'multiline': true
-			}
+				consistent: true,
+				multiline: true,
+			},
 		],
 		'object-curly-spacing': ['error', 'always'],
-		'object-property-newline': ['error', { 'allowAllPropertiesOnSameLine': true }],
+		'object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
 		'object-shorthand': 'error',
 		'one-var-declaration-per-line': 'error',
 		'operator-assignment': 'error',
@@ -216,16 +225,16 @@ module.exports = {
 		'prefer-rest-params': 'error',
 		'prefer-spread': 'error',
 		'prefer-template': 'error',
-		'quotes': ['error', 'single'],
+		quotes: ['error', 'single'],
 		'quote-props': ['error', 'as-needed'],
-		'radix': 'error',
+		radix: 'error',
 		'rest-spread-spacing': 'error',
-		'semi': 'error',
+		semi: 'error',
 		'semi-spacing': [
 			'error', {
 				before: false,
-				after: true
-			}
+				after: true,
+			},
 		],
 		'semi-style': 'error',
 		'space-before-blocks': 'error',
@@ -235,11 +244,11 @@ module.exports = {
 		'space-unary-ops': [
 			'error', {
 				words: true,
-				nonwords: false
-			}
+				nonwords: false,
+			},
 		],
 		'spaced-comment': ['error', 'always', { exceptions: ['-'] }],
-		'strict': ['error', 'global'],
+		strict: ['error', 'global'],
 		'switch-colon-spacing': 'error',
 		'symbol-description': 'error',
 		'template-curly-spacing': ['error', 'never'],
@@ -247,15 +256,15 @@ module.exports = {
 		'unicode-bom': 'error',
 		'valid-jsdoc': [
 			'error', {
-				prefer: { 'return': 'returns' },
+				prefer: { return: 'returns' },
 				preferType: {
-					'String': 'string',
-					'Number': 'number',
-					'Boolean': 'boolean',
-					'object': 'Object',
-					'function': 'Function'
-				}
-			}
+					String: 'string',
+					Number: 'number',
+					Boolean: 'boolean',
+					object: 'Object',
+					function: 'Function',
+				},
+			},
 		],
 		'wrap-iife': 'error',
 		'yield-star-spacing': 'error',
@@ -263,7 +272,7 @@ module.exports = {
 		'import/exports-last': 'error',
 		'import/extensions': ['error', 'never'],
 		'import/first': 'error',
-		'import/max-dependencies': ['error', {'max': 10}],
+		'import/max-dependencies': ['error', { max: 10 }],
 		'import/named': 'error',
 		'import/namespace': 'error',
 		'import/newline-after-import': 'error',
@@ -274,7 +283,7 @@ module.exports = {
 		'import/no-named-as-default': 'error',
 		'import/no-self-import': 'error',
 		'import/no-useless-path-segments': 'error',
-		'import/order': ['error', {'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index']}],
+		'import/order': ['error', { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'] }],
 		'import/prefer-default-export': 'warn',
 		'react/boolean-prop-naming': 'error',
 		'react/button-has-type': 'error',
@@ -304,7 +313,7 @@ module.exports = {
 		'react/no-will-update-set-state': 'error',
 		'react/prefer-es6-class': 'error',
 		'react/prefer-stateless-function': 'error',
-		'react/prop-types': ['error', { ignore: ['children'], }],
+		'react/prop-types': ['error', { ignore: ['children'] }],
 		'react/react-in-jsx-scope': 'error',
 		'react/require-default-props': 'error',
 		'react/require-render-return': 'error',
@@ -317,9 +326,9 @@ module.exports = {
 		'react/jsx-closing-bracket-location': ['error', 'after-props'],
 		'react/jsx-closing-tag-location': 'error',
 		'react/jsx-curly-spacing': ['error', {
-			'when': 'always',
-			'allowMultiline': false,
-			'spacing': { 'objectLiterals': 'never' },
+			when: 'always',
+			allowMultiline: false,
+			spacing: { objectLiterals: 'never' },
 		}],
 		'react/jsx-equals-spacing': 'error',
 		'react/jsx-first-prop-new-line': 'error',
@@ -327,18 +336,43 @@ module.exports = {
 		'react/jsx-indent': ['error', 'tab'],
 		'react/jsx-indent-props': ['error', 'tab'],
 		'react/jsx-key': 'error',
-		'react/jsx-no-bind': ['error', { 'ignoreDOMComponents': true }],
+		'react/jsx-no-bind': ['error', { ignoreDOMComponents: true }],
 		'react/jsx-no-comment-textnodes': 'error',
 		'react/jsx-no-duplicate-props': 'error',
 		'react/jsx-no-target-blank': 'error',
-		'react/jsx-no-undef': ['error', { 'allowGlobals': true }],
-		'react/jsx-one-expression-per-line': ['error', { 'allow': 'single-child' }],
-		'react/jsx-curly-brace-presence': ['error', { 'props': 'never' }],
+		'react/jsx-no-undef': ['error', { allowGlobals: true }],
+		'react/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
+		'react/jsx-curly-brace-presence': ['error', { props: 'never' }],
 		'react/jsx-pascal-case': 'error',
 		'react/jsx-props-no-multi-spaces': 'error',
-		'react/jsx-tag-spacing': ['error', { 'beforeClosing': 'never' }],
+		'react/jsx-tag-spacing': ['error', { beforeClosing: 'never' }],
 		'react/jsx-uses-react': 'error',
 		'react/jsx-uses-vars': 'error',
 		'react/jsx-wrap-multilines': 'error',
+		
+		'react-hooks/exhaustive-deps': 'warn',
+		'react-hooks/rules-of-hooks': 'error',
+		
+		'@typescript-eslint/explicit-function-return-type': 'off',
+		'@typescript-eslint/no-empty-function': 'off',
+		'@typescript-eslint/no-explicit-any': 'off',
+		'@typescript-eslint/no-var-requires': 'off',
 	},
+	overrides: [
+		{
+			files: ['*.ts', '*.tsx'],
+			rules: {
+				'no-extra-parens': 'off',
+				'no-undef': 'off',
+				'@typescript-eslint/explicit-function-return-type': ['error'],
+				'@typescript-eslint/no-var-requires': ['error'],
+			},
+		},
+		{
+			files: ['*.js', '*.jsx'],
+			rules: {
+				'@typescript-eslint/no-unused-vars': 'off',
+			},
+		},
+	],
 };

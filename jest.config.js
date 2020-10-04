@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-undef
 module.exports = {
 	testMatch: [
-		'<rootDir>/test/**/*.test.js?(x)',
+		'<rootDir>/test/**/*.test.(js|ts)?(x)',
 	],
 	modulePaths: [
 		'<rootDir>/node_modules/',

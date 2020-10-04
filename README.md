@@ -3,12 +3,12 @@ Personal Barebones React Template
 
 ## Configs
 * Webpack w/ DevServer
-* Babel 
+* Typescript 
 * Jest
 
 ## Tool Deps
-* React 16.8
-* Babel 7
-* Eslint 5.16
-* Jest 24.8
+* React 16.13.1
+* Typescript 4
+* Eslint 7.10
+* Jest 26.4
 * Webpack 4
