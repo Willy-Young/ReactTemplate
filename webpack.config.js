@@ -75,7 +75,6 @@ module.exports = (env = {}, argv) => {
 			extensions: ['.js', '.jsx', '.ts', '.tsx'],
 			modules: [
 				path.join(__dirname, '/src'),
-				path.join(__dirname, ''),
 				'node_modules',
 			],
 		},

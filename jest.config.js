@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-undef
 module.exports = {
+	preset: 'ts-jest/presets/js-with-ts',
 	testMatch: [
 		'<rootDir>/test/**/*.test.(js|ts)?(x)',
 	],
@@ -10,9 +11,6 @@ module.exports = {
 	collectCoverage: true,
 	coveragePathIgnorePatterns: [
 		'/node_modules/',
-		'<rootDir>/test/',
-	],
-	modulePathIgnorePatterns: [
 		'<rootDir>/test/',
 	],
 	globals: {

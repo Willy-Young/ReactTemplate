@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "jsx": "react",
